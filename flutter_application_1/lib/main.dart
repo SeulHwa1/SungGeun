@@ -22,7 +22,7 @@ GoogleSignIn _googleSignIn = GoogleSignIn(
 void main() {
   runApp(
     const MaterialApp(
-      title: 'Google Sign In',
+      title: '구글 로그인',
       home: SignInDemo(),
     ),
   );
@@ -214,13 +214,22 @@ class _SignInDemoState extends State<SignInDemo> {
           ),
           ElevatedButton(
             style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.black,
+              // fixedSize: const Size(0, 0),
+              backgroundColor: Colors.red,
               iconColor: Colors.white,
               surfaceTintColor: Colors.black,
-              foregroundColor: Colors.white,
+              foregroundColor: Colors.white54,
+              padding: const EdgeInsets.symmetric(horizontal: 42, vertical: 18),
+              alignment: const FractionalOffset(1, 1),
+              // shape: RoundedRectangleBorder(
+              //   borderRadius: BorderRadius.circular(100),
+              // )
             ),
             onPressed: _isRecording ? _stopRecording : _startRecording,
-            child: Icon(_isRecording ? Icons.stop : Icons.fiber_manual_record),
+            child: Icon(
+              _isRecording ? Icons.stop : Icons.mic,
+              size: 40,
+            ),
           ),
           Container(
             color: footerMainColor2,
